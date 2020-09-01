@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>契稅</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+  <style>
+
+body {
+  height: 100%;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.wrap{
+  max-width: 400px; 
+  min-width:314px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color:rgb(245, 246, 248);
+  padding: 40px 32px;
+}
+.son,.mother{
+  width: 40%;
+  display: inline;
+}
+
+input[type="radio"]{
+ display: none;
+}
+
+img{
+  width: 40px;
+  height: 30px;
+}
+label{
+font-size: 16px;
+}
+.title{
+  padding: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  border-bottom: 1px solid rgb(218, 224, 230);
+  border-top: 1px solid rgb(218, 224, 230);
+}
+.title-text{
+  font-size: 24px;
+  line-height: 24px;
+  font-weight:bold;
+  display:inline;
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(0, 87, 159); 
+}
+.unit{
+  color:white;
+  font-weight: normal;
+  font-size:14px;
+  background-color:rgb(163, 178, 191);
+  padding: 0 4px;
+  margin-left: 6px;
+  border-radius:4px;
+}
+.slash{
+  font-size: 20px;
+  margin:5px;
+}
+.btn-zone{
+ 
+}
+.btn-zone .btn{
+ width: 100px;
+  font-size: 18px;
+}
+.btn-zone .count{
+ background-color:rgb(0, 87, 159); 
+  border:1px solid rgb(0, 87, 159) ;
+  margin-right: 15px;  
+}
+.btn-zone .count:hover{
+  background-color:#005DA9;
+  border:1px solid #005DA9 ;
+}
+.total-wrap{
+ 
+  margin-top: 35px;
+  font-size: 23px;
+  border: 2px solid #999;
+  padding: 10px 12px;
+}
+.total-title{
+  font-size: 18px;
+  color:red;
+}
+.footer{
+  width: 100%;
+}
+.footer-copy{
+  width: 100%;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  padding: 15px;
+  background-color:rgb(204, 204, 204);
+}
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+ 
+
+</head>
+<body>
+<!-- nav  -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="index.html"><img src="http://www.clker.com/cliparts/7/l/F/U/O/u/simple-blue-house-md.png" alt="abc"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="dicha.html">地價稅</a>
+      <a class="nav-item nav-link" href="todiup.html">土地增值稅</a>
+      <a class="nav-item nav-link " href="houseone.html">房地合一所得稅</a>
+      <a class="nav-item nav-link  active" href="chi.html">契稅</a>
+      <a class="nav-item nav-link" href="wujia.html">物價指數</a>
+    </div>
+  </div>
+</nav>
+  
+<!-- 標題  -->
+<div class="title">
+  <div class="title-text">契稅</div>
+</div>
+  
+<!-- 表單  -->
+
+  <div class="wrap">
+  <form>
+    
+    <div class="form-group">
+      <label for="reason">申報事由</label>
+      <select class="form-control" id="reason">
+        <option value="0.06" >買賣 6%</option>
+        <option value="0.04" >承典 4%</option>
+        <option value="0.02" >交換 2%</option>
+        <option value="0.06">贈與 6%</option>
+        <option value="0.020">分割 2%</option>
+      </select>
+      </div>
+ 
+        
+    <div class="form-group pshow">
+      <label for="price" class="control-label">契價or評定標準價格</label>
+      <input type="number" class="form-control price" id="price"  value="0" >      
+    </div>
+    
+    <div class="form-group showa" >
+      <label for="changeA" class="control-label" >交換A</label>
+      <input type="number" class="form-control changeA" id="price"  value="0" >      
+    </div>
+    
+        <div class="form-group showb" >
+      <label for="changeB" class="control-label">交換B</label>
+      <input type="number" class="form-control changeB" id="price"  value="0" >      
+    </div>
+    
+    
+    
+    
+    <div class="btn-zone mt-4">
+     <button class="btn btn-lg btn-primary count" type="button">試算</button>
+     <button class="btn btn-lg btn-info  reset" type="reset">重置</button>
+  </div>
+ </form>
+   
+    <div class="total-wrap">
+     <div class="total-title">應納稅額：</div>
+    <span class="total">0</span>元
+    </div>
+ 
+  </div>  
+  
+
+  <div class="footer">
+    <div class="footer-inner"></div>
+    <div class="footer-copy">Copyright © Corporation. All rights reserved.</div>
+  </div>
+
+
+<script>
+        
+   $( document ).ready(function() {
+  //運算----------------------------------
+  $(".count").click(function(){
+      var reason =$('#reason').children('option:selected').val(); 
+     var price=parseFloat($('.price').val());
+     var chA=parseFloat($('.changeA').val());
+      var chB=parseFloat($('.changeB').val());
+    
+      var total =$('.total').text();   
+      var final;
+      var final1;
+   
+    if(reason==='0.02'){
+       if(chA>chB){
+         final=chB*0.02
+       }else{
+         
+       }
+      
+    }else{
+      final=price*reason;
+    }
+    
+
+ 
+    
+     
+    //alert(fix(final,2));
+    $('.total').text(fix(final,2));
+       $('.upfinal').text(fix(upfinal*sumarea,2));
+    });
+//----------------------------------------------
+  
+  //小數點2位數
+    function fix(num, N) {
+    var base = Math.pow(10, N);
+     return Math.round(num * base) / base;
+    }
+  //輸入數字
+  $(':input[type="number"]').focus(function(){
+     if($(this).val()==0){
+       $(this).val('');
+     }
+    });
+      
+    $(':input[type="number"]').blur(function(){
+       if ($(this).val() ==''){
+         $(this).val('0');
+       }
+    });  
+
+  
+  $('.reset').click(function(){
+   // Explicitly uncheck all of your radio buttons
+   $('[data-toggle="buttons"] :radio').prop('checked', false);
+   // Select all label elements within your toggle and remove the active class
+   $('[data-toggle="buttons"] label').removeClass('active');
+   
+  $('.nor,.doto').addClass('active');
+    $('.total').text('0');
+    $('.upfinal').text('0');
+   
+
+});
+
+        //交換契稅
+     　　$("#reason").change(function () {
+　　　　var rea = $(this).children('option:selected').val();
+           if (rea==='0.02'){
+             $('.pshow').hide();
+             $('.showa').show();
+             $('.showb').show();
+           }else{
+             $('.pshow').show();
+             $('.showa').hide();
+             $('.showb').hide();
+           }
+     });
+     
+  
+});
+
+  
+</script>
+</body>
+</html>

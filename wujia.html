@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>物價指數</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+  <style>
+
+ body {
+  height: 100%;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+}
+
+.wrap{
+  max-width: 400px; 
+  min-width:314px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color:rgb(245, 246, 248);
+  padding: 40px 32px;
+
+}
+
+
+
+
+img{
+  width: 40px;
+  height: 30px;
+}
+label{
+font-size: 16px;
+}
+.title{
+  padding: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  border-bottom: 1px solid rgb(218, 224, 230);
+  border-top: 1px solid rgb(218, 224, 230);
+}
+.title-text{
+  font-size: 24px;
+  line-height: 24px;
+  font-weight:bold;
+  display:inline;
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(0, 87, 159); 
+}
+.unit{
+  color:white;
+  font-weight: normal;
+  font-size:14px;
+  background-color:rgb(163, 178, 191);
+  padding: 0 4px;
+  margin-left: 6px;
+  border-radius:4px;
+}
+.slash{
+  font-size: 20px;
+  margin:5px;
+}
+.btn{
+ margin-top: 10px;
+ margin-left: 11px;
+}
+    
+
+.total-wrap{
+ 
+  margin-top: 35px;
+  font-size: 23px;
+  border: 2px solid #999;
+  padding: 10px 12px;
+  width: 100%;
+}
+.total-title{
+  font-size: 18px;
+
+}
+.footer{
+  width: 100%;
+}
+.footer-copy{
+  width: 100%;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  padding: 15px;
+  background-color:rgb(204, 204, 204);
+}
+.form-group{
+  width: 43%;
+  display: inline-block;
+  margin-right:3%;
+  margin-left: 3%;
+}
+
+
+  </style>
+ 
+
+</head>
+<body>
+<!-- nav  -->
+<!-- nav  -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="index.html"><img src="http://www.clker.com/cliparts/7/l/F/U/O/u/simple-blue-house-md.png" alt="abc"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="dicha.html">地價稅</a>
+      <a class="nav-item nav-link" href="todiup.html">土地增值稅</a>
+      <a class="nav-item nav-link" href="houseone.html">房地合一所得稅</a>
+      <a class="nav-item nav-link" href="house.html">房屋稅</a>
+      <a class="nav-item nav-link" href="chi.html">契稅</a>
+      <a class="nav-item nav-link  active" href="wujia.html">物價指數</a>
+    </div>
+  </div>
+</nav>
+  
+<!-- 標題  -->
+<div class="title">
+  <div class="title-text">物價指數計算</div> 
+</div>
+  
+<!-- 表單  -->
+
+  <div class="wrap">
+    
+  <div class="form-group">
+    <label for="syear">起始日</label>
+   <select class="form-control bar" name="syear" id="syear">
+    <option value="109">109年</option>
+     <option value="108">108年</option>
+    <option value="107">107年</option>
+    <option value="106">106年</option>
+    <option value="105">105年</option>
+    <option value="104">104年</option>  
+    <option value="103">103年</option>
+    <option value="102">102年</option>
+    <option value="101">101年</option>
+    <option value="100">100年</option>
+    <option value="99">99年</option>
+    <option value="98">98年</option>
+    <option value="97">97年</option>
+    <option value="96">96年</option>
+    <option value="95">95年</option>
+    <option value="94">94年</option>
+    <option value="93">93年</option>
+    <option value="92">92年</option>
+    <option value="91">91年</option>
+    <option value="90">90年</option>
+    <option value="89">89年</option>
+    <option value="88">88年</option>
+    <option value="87">87年</option>
+    <option value="86">86年</option>
+    <option value="85">85年</option>
+    <option value="84">84年</option>
+    <option value="83">83年</option>
+    <option value="82">82年</option>
+    <option value="81">81年</option>
+    <option value="80">80年</option>
+     <option value="79">79年</option>
+      <option value="78">78年</option>
+      <option value="77">77年</option>
+      <option value="76">76年</option>
+      <option value="75">75年</option>
+      <option value="74">74年</option>
+      <option value="73">73年</option>
+      <option value="72">72年</option>
+      <option value="71">71年</option>
+      <option value="70">70年</option>
+     
+  </select>
+    </div>
+    
+    <div class="form-group">
+  <select class="form-control bar" name="smonth" id="smonth">
+    <option value="0">1月</option>
+    <option value="1">2月</option>
+    <option value="2">3月</option>
+    <option value="3">4月</option>
+    <option value="4">5月</option>
+    <option value="5">6月</option>
+    <option value="6">7月</option>
+    <option value="7">8月</option>
+    <option value="8">9月</option>
+    <option value="9">10月</option>
+    <option value="10">11月</option>
+    <option value="11">12月</option>
+  </select>
+    
+  </div>
+  
+
+ <!-- ////////////////////////--> 
+  <div class="form-group">
+    <label for="eyear">終止日</label>
+    <select class="form-control bar" name="eyear" id="eyear">
+    <option value="109">109年</option>
+      <option value="108">108年</option>
+    <option value="107">107年</option>
+    <option value="106">106年</option>
+    <option value="105">105年</option>
+    <option value="104">104年</option>
+        <option value="103">103年</option>
+    <option value="102">102年</option>
+    <option value="101">101年</option>
+    <option value="100">100年</option>
+    <option value="99">99年</option>
+    <option value="98">98年</option>
+    <option value="97">97年</option>
+    <option value="96">96年</option>
+    <option value="95">95年</option>
+    <option value="94">94年</option>
+    <option value="93">93年</option>
+    <option value="92">92年</option>
+    <option value="91">91年</option>
+    <option value="90">90年</option>
+    <option value="89">89年</option>
+    <option value="88">88年</option>
+    <option value="87">87年</option>
+    <option value="86">86年</option>
+    <option value="85">85年</option>
+    <option value="84">84年</option>
+    <option value="83">83年</option>
+    <option value="82">82年</option>
+    <option value="81">81年</option>
+    <option value="80">80年</option>
+     <option value="79">79年</option>
+      <option value="78">78年</option>
+      <option value="77">77年</option>
+      <option value="76">76年</option>
+      <option value="75">75年</option>
+      <option value="74">74年</option>
+      <option value="73">73年</option>
+      <option value="72">72年</option>
+      <option value="71">71年</option>
+      <option value="70">70年</option>
+  </select>
+</div>  
+  
+   <div class="form-group">
+   <select class="form-control bar"  name="emonth" id="emonth">
+    <option value="0">1月</option>
+    <option value="1">2月</option>
+    <option value="2">3月</option>
+    <option value="3">4月</option>
+    <option value="4">5月</option>
+    <option value="5">6月</option>
+    <option value="6">7月</option>
+    <option value="7">8月</option>
+    <option value="8">9月</option>
+    <option value="9">10月</option>
+    <option value="10">11月</option>
+    <option value="11">12月</option>
+  </select>
+  </div>
+  
+  <button class="count btn btn-success btn-lg">計算</button>
+  
+
+        
+    
+
+   
+    <div class="total-wrap">
+     <div class="total-title">
+      <div class="tit">消費者物價指數:</div> 
+       <span class="show" style="font-size:14px"></span>
+     </div>
+    <span class="total">0</span>%
+    </div>
+   
+    <a href="https://www.dgbas.gov.tw/public/data/dgbas03/bs3/inquire/cpispleym.xls">各年月為基期之消費者物價總指數－稅務專用</a>
+  </div>  
+  
+
+  <div class="footer">
+    <div class="footer-inner"></div>
+    <div class="footer-copy">Copyright © Corporation. All rights reserved.</div>
+  </div>
+
+
+<script>
+        
+   $( document ).ready(function() {
+  //運算----------------------------------
+  $(".count").click(function(){
+       var sy=+$('#syear option:selected').val()-70;
+   var sm=+$('#smonth option:selected').val(); 
+   var ey=+$('#eyear option:selected').val()-70;
+   var em=+$('#emonth option:selected').val();
+   var diff=ey-sy;
+   var dif=em-sm;
+    
+var arr=[];
+arr[0]=[185.2,182.1,181.3,180.6,181.3,179.6,178.9,177.2,175.1,176.1,177.3]; //70
+arr[1]=[176.4,176.9,176.5,176,175,174.6,174.7,169.6,171.1,172.5,173.9];
+arr[2]=[173.2,171.5,170.8,170.1,171.2,170,171.9,172,171.5,171.5,173];
+arr[3]=[175.3,173.5,173,172.7,170.6,170.8,171.2,170.6,170,170.7,171.7];
+arr[4]=[172.4,171.1,171,171.8,172.4,172.7,172.5,173.2,170.4,170.6,173];
+arr[5]=[173.2,172.7,172.7,172.3,172.1,171.6,172.1,171.1,166.9,167.2,169.6];
+arr[6]=[170.8,171.1,172.5,171.9,171.9,171.8,169.8,168.4,167.8,169.3,168.9];
+arr[7]=[169.9,170.6,171.5,171.3,169.4,168.4,168.4,166,165.5,164.3,165.2];
+arr[8]=[165.3,163.9,163.5,162,160.8,161.3,162,160.7,156.6,155.1,159.2];
+arr[9]=[159.2,159.4,158.2,156.7,155,155.6,154.6,152.1,147,150.2,153.2];
+arr[10]=[151.6,150.7,151.4,150.5,150,149.6,148.6,148.2,148,146.6,146.1];
+arr[11]=[146.1,144.8,144.6,142.3,141.8,142.2,143.3,143.9,139.4,139.5,141.8];
+arr[12]=[141,140.5,140.1,138.5,139,136.3,138.7,139.3,138.4,137.8,137.5];
+arr[13]=[137,135.2,135.6,134.4,133.1,133.5,133.2,130.1,129.7,131.2,132.4];
+arr[14]=[130.2,130.7,130.5,128.7,128.9,127.5,128.3,127.9,127.2,127.5,127];
+arr[15]=[127.2,126,126.7,125.1,125.3,124.5,126.4,121.8,122.5,123,123.1]; //85
+arr[16]=[124.8,123.5,125.4,124.5,124.3,122.3,122.4,122.5,121.7,123.4,123.7];
+arr[17]=[122.3,123.1,122.3,121.9,122.3,120.6,121.4,122,121.2,120.3,119];
+arr[18]=[121.9,120.6,122.9,122,121.7,121.6,122.4,120.6,120.5,119.8,120.1];
+arr[19]=[121.2,119.5,121.5,120.5,119.8,120,120.6,120.2,118.6,118.6,117.5];
+arr[20]=[118.4,120.7,121,120,120.1,120.1,120.5,119.7,119.2,117.4,118.8]; //90
+arr[21]=[120.5,119,121,119.8,120.4,120,120,120,120.1,119.4,119.5];
+arr[22]=[119.2,120.8,121.2,119.9,120,120.7,121.2,120.7,120.4,119.5,120];
+arr[23]=[119.2,120.1,120.2,118.8,118.9,118.6,117.3,117.7,117.1,116.7,118.2];
+arr[24]=[118.6,117.8,117.5,116.9,116.2,115.9,114.5,113.7,113.5,113.6,115.4];
+arr[25]=[115.5,116.6,117,115.5,114.4,113.9,113.6,114.3,115,115,115.1]; //95
+arr[26]=[115.1,114.6,116,114.7,114.4,113.7,114,112.5,111.5,109.2,109.8];
+arr[27]=[111.8,110.4,111.6,110.4,110.3,108.4,107.7,107.5,108.1,106.6,107.7];
+arr[28]=[110.2,111.9,111.8,110.9,110.4,110.5,110.3,108.4,109.1,108.7,109.5];
+arr[29]=[109.9,109.3,110.4,109.4,109.6,109.2,108.9,108.9,108.8,108.1,107.9];
+arr[30]=[108.7,107.9,108.8,108,107.8,107.2,107.5,107.4,107.3,106.7,106.7];  //100
+arr[31]=[106.2,107.6,107.5,106.5,106,105.3,104.9,103.9,104.2,104.3,105.1];
+arr[32]=[105,104.5,106,105.4,105.2,104.7,104.8,104.7,103.3,103.6,104.4];
+arr[33]=[104.2,104.6,104.4,103.7,103.5,103,103,102.6,102.6,102.5,103.5]; //103
+    
+arr[34]=[105.1,104.8,105,104.5,104.3,103.6,103.7,103,102.3,102.2,102.9,103.7];   //104 
+arr[35]=[104.3,102.3,102.9,102.6,103,102.6,102.4,102.4,102.0,100.5,100.9,102,];   //105 
+arr[36]=[102.0,102.4,102.8,102.5,102.4,101.6,101.6,101.5,101.5,100.9,100.6,100.8];   //106 
+arr[37]=[101.1,100.2,101.1,100.5,100.6,100.2,99.9,99.9,99.8,99.7,100.3,100.8];   //107 
+arr[38]=[100.9,100,100.6,99.8,99.7,99.4,99.5,99.5,99.3,99.3,99.7,99.7];   //108
+arr[39]=[99.1,100.2,100.6,100.8,100.9,100.1,100,100,100,100,100,100];   //109    
+
+
+//--------------------------------------------
+if(diff<0 || diff===0 && dif<0){
+  alert('輸入錯誤');
+} else if(diff===0){
+  var ssarr=arr[sy].slice(sm,em+1);
+  var ssarrlen=ssarr.length;
+  var ssum=0;
+  for(i=0;i<ssarr.length;i++){
+    ssum+=ssarr[i];
+  }
+  var sadd=ssum/ssarrlen;  //結果
+$('.total').text(fix(sadd,1));
+ $('.show').text("("+(sy+70)+"年"+(sm+1)+"月"+"~"+(ey+70)+"年"+(em+1)+"月)");
+}else{
+
+var sarr=arr[sy].slice(sm,12); 
+var earr=arr[ey].slice(0,em+1);
+
+
+var marr=[];
+for(var i=(sy+1);i<=(ey-1);i++){
+  var marr=marr.concat(arr[i]);
+}  
+
+    
+var add=sarr.concat(marr,earr);
+function madd(){
+  var sum=0
+  var addlen=add.length;
+  for (i=0;i<add.length;i++){
+   sum+=add[i];
+}
+  return sum/addlen;  
+}
+  
+$('.total').text(fix(madd(),1)); //輸出
+$('.show').text("("+(sy+70)+"年"+(sm+1)+"月"+"~"+(ey+70)+"年"+(em+1)+"月)");
+} 
+    
+     
+ //alert(fix(final,2));
+ //   $('.total').text(fix(final,2));
+ //      $('.upfinal').text(fix(upfinal*sumarea,2));
+     });
+//----------------------------------------------
+  
+  //小數點2位數
+    function fix(num, N) {
+    var base = Math.pow(10, N);
+     return Math.round(num * base) / base;
+    }
+  
+  
+});
+
+  
+</script>
+</body>
+</html>

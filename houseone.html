@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>房地合一</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+  <style>
+   
+ body {
+  height: 100%;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.wrap{
+  max-width: 400px; 
+  min-width:314px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color:rgb(245, 246, 248);
+  padding: 40px 32px;
+}
+.date{
+  width:60px;
+  display: inline;
+}
+
+input[type="radio"]{
+ display: none;
+}
+
+img{
+  width: 40px;
+  height: 30px;
+}
+label{
+font-size: 16px;
+}
+.title{
+  padding: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  border-bottom: 1px solid rgb(218, 224, 230);
+  border-top: 1px solid rgb(218, 224, 230);
+}
+.title-text{
+  font-size: 24px;
+  line-height: 24px;
+  font-weight:bold;
+  display:inline;
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(0, 87, 159); 
+}
+.unit{
+  color:white;
+  font-weight: normal;
+  font-size:14px;
+  background-color:rgb(163, 178, 191);
+  padding: 0 4px;
+  margin-left: 6px;
+  border-radius:4px;
+}
+.slash{
+  font-size: 20px;
+  margin:5px;
+}
+.btn-zone{
+ 
+}
+.btn-zone .btn{
+ width: 100px;
+  font-size: 18px;
+}
+.btn-zone .count{
+ background-color:rgb(0, 87, 159); 
+  border:1px solid rgb(0, 87, 159) ;
+  margin-right: 15px;  
+}
+.btn-zone .count:hover{
+  background-color:#005DA9;
+  border:1px solid #005DA9 ;
+}
+.total-wrap{
+ 
+  margin-top: 35px;
+  font-size: 23px;
+  border: 2px solid #999;
+  padding: 10px 12px;
+}
+.total-title{
+  font-size: 18px;
+  color:red;
+}
+.footer{
+  width: 100%;
+}
+.footer-copy{
+  width: 100%;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  padding: 15px;
+  background-color:rgb(204, 204, 204);
+}
+
+.tab-pane{
+  padding:25px 0;
+}
+
+
+
+
+
+
+
+
+
+  </style>
+ 
+
+</head>
+<body>
+<!-- nav  -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="index.html"><img src="http://www.clker.com/cliparts/7/l/F/U/O/u/simple-blue-house-md.png" alt="abc"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="dicha.html">地價稅</a>
+      <a class="nav-item nav-link" href="todiup.html">土地增值稅</a>
+      <a class="nav-item nav-link active" href="houseone.html">房地合一所得稅</a>
+      <a class="nav-item nav-link" href="house.html">房屋稅</a>
+      <a class="nav-item nav-link" href="chi.html">契稅</a>
+      <a class="nav-item nav-link" href="wujia.html">物價指數</a>
+    </div>
+  </div>
+</nav>
+  
+<!-- 標題  -->
+ <div class="title">
+  <div class="title-text">房地合一所得稅</div>
+</div> 
+  
+<!-- 表單  -->  
+  
+  <div class="wrap">
+
+   <form action="#"  >
+     <div class="form-group">
+    <div class="input-group-btn" data-toggle="buttons">
+       <label class="btn btn-outline-primary active doto">
+         <input type="radio" name="inout" value="inself" id="inself" checked>境內自住
+       </label>
+       <label class="btn btn-outline-primary">
+         <input type="radio" name="inout" value="noinself" id="noinself" >境內非自住
+       </label>
+             <label class="btn btn-outline-primary">
+         <input type="radio" name="inout" value="out" id="out" >境外
+       </label>
+      
+        <label class="btn btn-outline-primary" style="display:none">
+         <input type="radio" name="inout" value="novul" id="out">非自願
+       </label>
+    </div> 
+    </div>
+    
+    <div class="form-group">
+      <label for="buy">購買日期(取得日)</label><br>
+       <input type="number" class="form-control  date buyyear" id="buy"  value="0"> <span>年</span>
+        <input type="number" class="form-control date buymonth"  value="0"><span>月</span>
+       <input type="number" class="form-control date buyday"  value="0"><span>日</span>
+    </div>
+    
+           <div class="form-group">
+      <label for="sell">出售日期(交易日)</label><br>
+ <input type="number" class="form-control date sellyear" id="sell"  value="0"> <span>年</span>
+        <input type="number" class="form-control date sellmonth"  value="0"><span>月</span>
+       <input type="number" class="form-control date sellday"  value="0"><span>日</span>
+    </div>
+    
+             <div class="form-group">
+      <label for="exprice" class="control-label">購買價格<span class="unit">元</span></label>
+      <input type="number" class="form-control exprice" id="exprice"  value="0">     
+    </div>
+     
+     
+        <div class="form-group">
+      <label for="price" class="control-label">出售價格<span class="unit">元</span></label>       
+      <input type="number" class="form-control price" id="price"  value="0" >    
+    </div>
+    
+ 
+
+    
+            <div class="form-group">
+      <label for="cost" class="control-label">取得、改良及移轉支付費用<span class="unit">元</span></label>
+      <input type="number" class="form-control cost" id="cost"  value="0">     
+    </div>
+    
+        <div class="form-group">
+      <label for="priceup" class="control-label">土地漲價總數額<span class="unit">元</span></label>
+       <a href="todiup">計算</a>
+      <input type="number" class="form-control priceup" id="priceup"  value="0">     
+    </div>
+    
+
+    
+ 
+    
+    
+    
+ 
+    
+    
+    <div class="btn-zone mt-4">
+     <button class="btn btn-lg btn-primary count" type="button">試算</button>
+     <button class="btn btn-lg btn-info  reset" type="reset">重置</button>
+  </div>
+ </form>
+   
+    <div class="total-wrap">
+     <div class="total-title">應納稅額：</div>
+    <span class="total">0</span>元
+    </div>   
+
+ 
+    <!--重購退稅
+    <div class="form-group">
+      <label for="cost" class="control-label">重購房地價格<span class="unit">元</span></label>
+      <input type="number" class="form-control cost" id="cost"  value="0">     
+    </div>
+        <div class="total-wrap">
+     <div class="total-title">重購退稅：</div>
+    <span class="refund">0</span>元
+    </div>  -->
+    
+  </div> 
+  
+
+  <div class="footer">
+    <div class="footer-inner"></div>
+    <div class="footer-copy">Copyright © Corporation. All rights reserved.</div>
+  </div>
+
+
+<script>
+   $( document ).ready(function() {
+  //運算----------------------------------
+  $(".count").click(function(){
+      var inout= $("input[name=inout]:checked").val();
+      var price=parseFloat($('.price').val());
+      var exprice=parseFloat($('.exprice').val());
+      var cost=parseFloat($('.cost').val());      
+      var priceup=parseInt($('.priceup').val());    
+      var total =$('.total').text();
+      
+      //日期
+      var buyyear= Number($('.buyyear').val())+1911;
+      var buymonth= $('.buymonth').val();
+      var buyday=$('.buyday').val();
+      var sellyear=Number($('.sellyear').val())+1911;
+      var sellmonth=$('.sellmonth').val();
+      var sellday=$('.sellday').val();
+      var buydate=new Date(buyyear,buymonth,buyday);
+      var selldate=new Date(sellyear,sellmonth,sellday);
+      var datediff = (selldate-buydate)/(1000*60*60*24*365);
+      //--------------------------------------
+      
+     var recost= cost=="0" ? (cost = price*0.05) : (cost = cost) ; 
+     var final=price-exprice-recost-priceup;
+      
+    
+  if(inout==='inself'){
+    if(final-400 > 0){
+       refinal=(final-400)*0.1;
+    }else{
+      refinal="(免納稅)";
+    }
+    
+  }else if(inout==='noinself'){
+     if(datediff<=1){
+       refinal=final*0.45;
+     }else if(datediff<=2){
+       refinal=final*0.35;
+     }else if(datediff<=10){
+       refinal=final*0.20;
+     }else{
+       refinal=final*0.15;  
+     }
+    
+  }else if(inout==='out'){
+    if(datediff<=1){
+     refinal=final*0.45; 
+    }else{
+      refinal=final*0.35;
+    }
+  }else{
+     if(datediff<=2){
+     refinal=final*0.20; 
+    }else{
+      refinal="不合條件(二年內出售)";
+    }
+  }
+ var refinal= refinal<=0 ?(refinal="(免納稅)") : (refinal=refinal);
+var last=  isNaN(refinal) ? (refinal=refinal) : (fix(refinal,2));   
+    
+   //  alert(fix(refinal,2));
+    $('.total').text(last);
+    $('.refund').text(refund);
+    });
+//----------------------------------------------
+  
+  //小數點2位數
+    function fix(num, N) {
+    var base = Math.pow(10, N);
+     return Math.round(num * base) / base;
+    }
+  //輸入數字
+  $(':input[type="number"]').focus(function(){
+     if($(this).val()==0){
+       $(this).val('');
+     }
+    });
+      
+    $(':input[type="number"]').blur(function(){
+       if ($(this).val() ==''){
+         $(this).val('0');
+       }
+    });  
+
+  
+  $('.reset').click(function(){
+   // Explicitly uncheck all of your radio buttons
+   $('[data-toggle="buttons"] :radio').prop('checked', false);
+   // Select all label elements within your toggle and remove the active class
+   $('[data-toggle="buttons"] label').removeClass('active');
+   
+  $('.nor,.doto').addClass('active');
+    $('.total').text('0');
+});
+
+  
+});
+     
+
+
+  
+</script>
+</body>
+</html>

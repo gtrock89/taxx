@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>土地增值稅</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+  <style>
+
+body {
+  height: 100%;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0; 
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.wrap{
+  max-width: 400px; 
+  min-width:314px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  background-color:rgb(245, 246, 248);
+  padding: 40px 32px;
+}
+.son,.mother{
+  width: 40%;
+  display: inline;
+}
+
+input[type="radio"]{
+ display: none;
+}
+
+img{
+  width: 40px;
+  height: 30px;
+}
+label{
+font-size: 16px;
+}
+.title{
+  padding: 32px;
+  margin-bottom: 32px;
+  text-align: center;
+  border-bottom: 1px solid rgb(218, 224, 230);
+  border-top: 1px solid rgb(218, 224, 230);
+}
+.title-text{
+  font-size: 24px;
+  line-height: 24px;
+  font-weight:bold;
+  display:inline;
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(0, 87, 159); 
+}
+.unit{
+  color:white;
+  font-weight: normal;
+  font-size:14px;
+  background-color:rgb(163, 178, 191);
+  padding: 0 4px;
+  margin-left: 6px;
+  border-radius:4px;
+}
+.slash{
+  font-size: 20px;
+  margin:5px;
+}
+.btn-zone{
+ 
+}
+.btn-zone .btn{
+ width: 100px;
+  font-size: 18px;
+}
+.btn-zone .count{
+ background-color:rgb(0, 87, 159); 
+  border:1px solid rgb(0, 87, 159) ;
+  margin-right: 15px;  
+}
+.btn-zone .count:hover{
+  background-color:#005DA9;
+  border:1px solid #005DA9 ;
+}
+.total-wrap{
+ 
+  margin-top: 35px;
+  font-size: 23px;
+  border: 2px solid #999;
+  padding: 10px 12px;
+}
+.total-title{
+  font-size: 18px;
+  color:red;
+}
+.footer{
+  width: 100%;
+}
+.footer-copy{
+  width: 100%;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: center;
+  padding: 15px;
+  background-color:rgb(204, 204, 204);
+}
+
+
+
+
+
+
+
+
+
+
+
+  </style>
+ 
+
+</head>
+<body>
+<!-- nav  -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand" href="index.html"><img src="http://www.clker.com/cliparts/7/l/F/U/O/u/simple-blue-house-md.png" alt="abc"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="dicha.html">地價稅</a>
+      <a class="nav-item nav-link active" href="todiup.html">土地增值稅</a>
+      <a class="nav-item nav-link" href="houseone.html">房地合一所得稅</a>
+      <a class="nav-item nav-link" href="house.html">房屋稅</a>
+      <a class="nav-item nav-link" href="chi.html">契稅</a>
+      <a class="nav-item nav-link" href="wujia.html">物價指數</a>
+    </div>
+  </div>
+</nav>
+  
+<!-- 標題  -->
+<div class="title">
+  <div class="title-text">土地增值稅</div>
+</div>
+  
+<!-- 表單  -->
+
+  <div class="wrap">
+  <form>
+     <div class="form-group">
+    <div class="input-group-btn" data-toggle="buttons">
+       <label class="btn btn-outline-primary active doto">
+         <input type="radio" name="todi" value="doto" id="doto" checked>都市土地
+       </label>
+       <label class="btn btn-outline-primary">
+         <input type="radio" name="todi" value="nodoto" id="nodoto" >非都市土地
+       </label>
+    </div> 
+    </div>
+    
+    
+    <div class="form-group">
+      <label for="price" class="control-label">土地公告現值<span class="unit">元/平方公尺</span></label>
+      <a href="https://www.land.moi.gov.tw/chhtml/landvalue/42" target="_blank">查詢</a>
+      <input type="number" class="form-control price" id="price"  value="0" >
+       
+    </div>
+    
+        <div class="form-group">
+      <label for="exprice" class="control-label">原規定地價或前次移轉現值<span class="unit">元/平方公尺</span></label>
+      <input type="number" class="form-control exprice" id="exprice"  value="0">     
+    </div>
+    
+        <div class="form-group">
+      <label for="sho" class="control-label">消費者物價指數<span class="unit">%</span></label>
+      <a href="wujia.html" target="_blank">查詢</a>
+      <input type="number" class="form-control sho"  id="sho" required="required"  value="0">     
+    </div>
+    
+    <div class="form-group">
+      <label for="area">土地面積<span class="unit">平方公尺</span></label>
+      <input type="number" class="form-control area" value="0" id="area"  >
+    </div>
+      
+    
+     <div class="form-group">
+      <label for="son">權利範圍<span class="unit">分子/分母</span></label><br>
+      <input type="number" class="form-control son" id="son"  value="1"> <span class="slash">/</span>
+        <input type="number" class="form-control mother"  value="1">
+    </div>
+  
+    
+    <div class="form-group">
+      <label for="year">持有土地年限</label>
+      <select class="form-control" id="year">
+        <option value="no20" >未超過20年</option>
+        <option value="over20" >超過20年以上</option>
+        <option value="over30" >超過30年以上</option>
+        <option value="over40">超過40年以上</option>
+      </select>
+      </div>
+ 
+    
+    <div class="form-group mt-4">
+    <div class="input-group-btn" data-toggle="buttons">
+       <label class="btn btn-outline-primary active nor">
+         <input type="radio" name="udi" value="normal" checked>一般用地
+       </label>
+       <label class="btn btn-outline-primary">
+         <input type="radio" name="udi" value="onetime">一生一次
+       </label>
+       <label class="btn btn-outline-primary">
+         <input type="radio" name="udi" value="onehouse" >一生一屋
+       </label>
+
+    </div> 
+    </div> 
+    
+    
+    
+    
+    <div class="btn-zone">
+     <button class="btn btn-lg btn-primary count" type="button">試算</button>
+     <button class="btn btn-lg btn-info  reset" type="reset">重置</button>
+  </div>
+ </form>
+   
+    <div class="total-wrap">
+     <div class="total-title">應納稅額：</div>
+    <span class="total">0</span>元
+    </div>
+    <span>(土地漲價總數額:<span class="upfinal">0</span>元)</span>
+    <br><span><a href="">房地合一所得稅</a></span>
+  </div>  
+  
+
+  <div class="footer">
+    <div class="footer-inner"></div>
+    <div class="footer-copy">Copyright © Corporation. All rights reserved.</div>
+  </div>
+
+
+<script>
+        
+   $( document ).ready(function() {
+  //運算----------------------------------
+  $(".count").click(function(){
+      var todi= $("input[name=todi]:checked").val();
+      var udi= $("input[name=udi]:checked").val(); 
+      var year =$('#year').children('option:selected').val();  
+      var price=parseFloat($('.price').val());
+      var exprice=parseFloat($('.exprice').val());
+      var sho=parseFloat($('.sho').val())/100;
+      var area=parseInt($('.area').val());
+      var son=parseInt($('.son').val());
+      var mother=parseFloat($('.mother').val());
+      var sumarea=area*(son/mother);  
+      
+    
+      var total =$('.total').text();   
+      var upfinal=(price-(exprice*sho)); //漲價總數額
+      var exfinal=exprice*sho;         //前次移轉現值
+      var bay=(price-(exprice*sho))/(exprice*sho);//倍數
+      var final;
+    
+  //一般用地
+   if(udi==='normal'){
+       if(year==='no20'){
+        if(bay<1){
+          final=upfinal*0.2*sumarea;
+        }else if(bay<2){
+          final=(exfinal*0.2+((upfinal-exfinal)*0.3))*sumarea;
+        }else{
+          final=(exfinal*0.2+(exfinal*0.3)+((upfinal-exfinal*2)*0.4))*sumarea;
+        }
+      
+       }else if(year==='over20'){
+          if(bay<1){
+          final=upfinal*0.2*sumarea;
+        }else if(bay<2){
+          final=exfinal*0.2+((upfinal-exfinal)*0.28)*sumarea;
+        }else{
+           final=(exfinal*0.2+(exfinal*0.28)+((upfinal-exfinal*2)*0.36))*sumarea;
+        }
+         
+         
+       }else if(year==='over30'){
+         if(bay<1){
+          final=upfinal*0.2*sumarea;
+        }else if(bay<2){
+          final=(exfinal*0.2+((upfinal-exfinal)*0.27))*sumarea;
+        }else{
+           final=(exfinal*0.2+(exfinal*0.27)+((upfinal-exfinal*2)*0.34))*sumarea;
+        }
+         
+         
+       }else{
+         if(bay<1){
+          final=upfinal*0.2*sumarea;
+        }else if(bay<2){
+          final=(exfinal*0.2+((upfinal-exfinal)*0.226))*sumarea;
+        }else{
+           final=(exfinal*0.2+(exfinal*0.26)+((upfinal-exfinal*2)*0.32))*sumarea;
+        }
+       }
+
+   
+    
+  //一生一次 
+   }else if(udi==='onetime'){  
+     if(todi==='doto'){
+        if(sumarea<300){
+          final=(upfinal*sumarea*0.1);
+          }else{
+           if(year==='no20'){
+             if(bay<1){
+            final=(upfinal*300*0.1)+(upfinal*0.2)*(sumarea-300);              
+          }else if(bay<2){
+            final=(upfinal*300*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-300); 
+          }else{
+          final=(upfinal*300*0.1)+(exfinal*0.2+exfinal*0.3+(upfinal-exfinal*2)*0.4)*(sumarea-300);
+          }
+
+           }else if(year==='over20'){
+             if(bay<1){
+            final=(upfinal*300*0.1)+(upfinal*0.2)*(sumarea-300);              
+          }else if(bay<2){
+            final=(upfinal*300*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-300); 
+          }else{
+          final=(upfinal*300*0.1)+(exfinal*0.2+exfinal*0.28+(upfinal-exfinal*2)*0.36)*(sumarea-300);
+          }
+
+           }else if(year==='over30'){
+                         if(bay<1){
+            final=(upfinal*300*0.1)+(upfinal*0.2)*(sumarea-300);              
+          }else if(bay<2){
+            final=(upfinal*300*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-300); 
+          }else{
+          final=(upfinal*300*0.1)+(exfinal*0.2+exfinal*0.27+(upfinal-exfinal*2)*0.34)*(sumarea-300);
+          }
+        }else{
+            if(bay<1){
+            final=(upfinal*300*0.1)+(upfinal*0.2)*(sumarea-300);              
+          }else if(bay<2){
+            final=(upfinal*300*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-300); 
+          }else{
+          final=(upfinal*300*0.1)+(exfinal*0.2+exfinal*0.26+(upfinal-exfinal*2)*0.32)*(sumarea-300);
+          } 
+
+        }
+ 
+        }
+  
+       
+       
+       //非都土
+     }else{
+        if(sumarea<700){
+          final=(upfinal*sumarea*0.1);
+        }else{
+          if(year==='no20'){
+             if(bay<1){
+            final=(upfinal*700*0.1)+(upfinal*0.2)*(sumarea-700);              
+          }else if(bay<2){
+            final=(upfinal*700*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-700); 
+          }else{
+          final=(upfinal*700*0.1)+(exfinal*0.2+exfinal*0.3+(upfinal-exfinal*2)*0.4)*(sumarea-700);
+          }
+          }else if(year==='over20'){
+                      if(bay<1){
+            final=(upfinal*700*0.1)+(upfinal*0.2)*(sumarea-700);              
+          }else if(bay<2){
+            final=(upfinal*700*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-700); 
+          }else{
+          final=(upfinal*700*0.1)+(exfinal*0.2+exfinal*0.28+(upfinal-exfinal*2)*0.36)*(sumarea-700);
+          }
+        }else if(year==='over30'){
+                    if(bay<1){
+            final=(upfinal*700*0.1)+(upfinal*0.2)*(sumarea-700);              
+          }else if(bay<2){
+            final=(upfinal*700*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.27)*(sumarea-700); 
+          }else{
+          final=(upfinal*700*0.1)+(exfinal*0.2+exfinal*0.27+(upfinal-exfinal*2)*0.34)*(sumarea-700);
+          }
+        }else{
+                    if(bay<1){
+            final=(upfinal*700*0.1)+(upfinal*0.2)*(sumarea-700);              
+          }else if(bay<2){
+            final=(upfinal*700*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.26)*(sumarea-700); 
+          }else{
+          final=(upfinal*700*0.1)+(exfinal*0.2+exfinal*0.26+(upfinal-exfinal*2)*0.32)*(sumarea-700);
+          }
+        }
+
+     }
+     }
+   
+  //一生一屋 
+   }else{ 
+ if(todi==='doto'){
+        if(sumarea<150){
+          final=(upfinal*sumarea*0.1);
+          }else{
+           if(year==='no20'){
+             if(bay<1){
+            final=(upfinal*150*0.1)+(upfinal*0.2)*(sumarea-300);              
+          }else if(bay<2){
+            final=(upfinal*150*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-150); 
+          }else{
+          final=(upfinal*150*0.1)+(exfinal*0.2+exfinal*0.3+(upfinal-exfinal*2)*0.4)*(sumarea-150);
+          }
+
+           }else if(year==='over20'){
+             if(bay<1){
+            final=(upfinal*150*0.1)+(upfinal*0.2)*(sumarea-150);              
+          }else if(bay<2){
+            final=(upfinal*150*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-150); 
+          }else{
+          final=(upfinal*150*0.1)+(exfinal*0.2+exfinal*0.28+(upfinal-exfinal*2)*0.36)*(sumarea-150);
+          }
+
+           }else if(year==='over30'){
+                         if(bay<1){
+            final=(upfinal*150*0.1)+(upfinal*0.2)*(sumarea-150);              
+          }else if(bay<2){
+            final=(upfinal*150*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-150); 
+          }else{
+          final=(upfinal*150*0.1)+(exfinal*0.2+exfinal*0.27+(upfinal-exfinal*2)*0.34)*(sumarea-150);
+          }
+        }else{
+            if(bay<1){
+            final=(upfinal*150*0.1)+(upfinal*0.2)*(sumarea-150);              
+          }else if(bay<2){
+            final=(upfinal*150*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.3)*(sumarea-150); 
+          }else{
+          final=(upfinal*150*0.1)+(exfinal*0.2+exfinal*0.26+(upfinal-exfinal*2)*0.32)*(sumarea-150);
+          } 
+
+        }
+ 
+        }
+  
+       
+       
+       //非都土
+     }else{
+        if(sumarea<350){
+          final=(upfinal*sumarea*0.1);
+        }else{
+          if(year==='no20'){
+             if(bay<1){
+            final=(upfinal*350*0.1)+(upfinal*0.2)*(sumarea-350);              
+          }else if(bay<2){
+            final=(upfinal*350*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-350); 
+          }else{
+          final=(upfinal*350*0.1)+(exfinal*0.2+exfinal*0.3+(upfinal-exfinal*2)*0.4)*(sumarea-350);
+          }
+          }else if(year==='over20'){
+                      if(bay<1){
+            final=(upfinal*350*0.1)+(upfinal*0.2)*(sumarea-350);              
+          }else if(bay<2){
+            final=(upfinal*350*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.28)*(sumarea-350); 
+          }else{
+          final=(upfinal*350*0.1)+(exfinal*0.2+exfinal*0.28+(upfinal-exfinal*2)*0.36)*(sumarea-350);
+          }
+        }else if(year==='over30'){
+                    if(bay<1){
+            final=(upfinal*350*0.1)+(upfinal*0.2)*(sumarea-350);              
+          }else if(bay<2){
+            final=(upfinal*350*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.27)*(sumarea-350); 
+          }else{
+          final=(upfinal*350*0.1)+(exfinal*0.2+exfinal*0.27+(upfinal-exfinal*2)*0.34)*(sumarea-350);
+          }
+        }else{
+                    if(bay<1){
+            final=(upfinal*350*0.1)+(upfinal*0.2)*(sumarea-350);              
+          }else if(bay<2){
+            final=(upfinal*350*0.1)+(exfinal*0.2+(upfinal-exfinal)*0.26)*(sumarea-350); 
+          }else{
+          final=(upfinal*350*0.1)+(exfinal*0.2+exfinal*0.26+(upfinal-exfinal*2)*0.32)*(sumarea-350);
+          }
+        }
+
+     }
+     }
+    
+   }
+    
+    
+ 
+    
+     
+    //alert(fix(final,2));
+    $('.total').text(fix(final,2));
+       $('.upfinal').text(fix(upfinal*sumarea,2));
+    });
+//----------------------------------------------
+  
+  //小數點2位數
+    function fix(num, N) {
+    var base = Math.pow(10, N);
+     return Math.round(num * base) / base;
+    }
+  //輸入數字
+  $(':input[type="number"]').focus(function(){
+     if($(this).val()==0){
+       $(this).val('');
+     }
+    });
+      
+    $(':input[type="number"]').blur(function(){
+       if ($(this).val() ==''){
+         $(this).val('0');
+       }
+    });  
+
+  
+  $('.reset').click(function(){
+   // Explicitly uncheck all of your radio buttons
+   $('[data-toggle="buttons"] :radio').prop('checked', false);
+   // Select all label elements within your toggle and remove the active class
+   $('[data-toggle="buttons"] label').removeClass('active');
+   
+  $('.nor,.doto').addClass('active');
+    $('.total').text('0');
+    $('.upfinal').text('0');
+   
+
+});
+
+  
+});
+
+  
+</script>
+</body>
+</html>
