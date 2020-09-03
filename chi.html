@@ -185,17 +185,17 @@ font-size: 16px;
       <label for="price" class="control-label">契價or評定標準價格</label>
       <input type="number" class="form-control price" id="price"  value="0" >      
     </div>
-    <!--
-    <div class="form-group showa" >
+
+    <div class="form-group showa" style="display:none">
       <label for="changeA" class="control-label" >交換A</label>
       <input type="number" class="form-control changeA" id="price"  value="0" >      
     </div>
     
-        <div class="form-group showb" >
+        <div class="form-group showb" style="display:none">
       <label for="changeB" class="control-label">交換B</label>
       <input type="number" class="form-control changeB" id="price"  value="0" >      
     </div>
-    -->
+ 
     
     
     
@@ -207,7 +207,8 @@ font-size: 16px;
    
     <div class="total-wrap">
      <div class="total-title">應納稅額：</div>
-    <span class="total">0</span>元
+    <span class="total">0元</span><br>
+       <span class="total1"></span>
     </div>
  
   </div>  
@@ -231,17 +232,26 @@ font-size: 16px;
     
       var total =$('.total').text();   
       var final;
-      var final1;
+      var finalA;
+      var finalB;
    
     if(reason==='0.02'){
        if(chA>chB){
-         final=chB*0.02
+         finalA=chB*0.02+(chA-chB)*0.06;
+         finalB=chB*0.02;
+          $('.total').text('A應繳納'+(fix(finalA,2))+'元(受有補償)');
+         $('.total1').text('B應繳納'+(fix(finalB,2))+'元');
        }else{
-         
+         finalA=chA*0.02;
+         finalB=chA*0.02+(chB-chA)*0.06;
+         $('.total').text('A應繳納'+(fix(finalA,2))+'元');
+         $('.total1').text('B應繳納'+(fix(finalB,2))+'元(受有補償)');
        }
       
     }else{
       final=price*reason;
+      $('.total').text(fix(final,2)+'元');
+      $('.total1').text('');
     }
     
 
@@ -249,8 +259,8 @@ font-size: 16px;
     
      
     //alert(fix(final,2));
-    $('.total').text(fix(final,2));
-       $('.upfinal').text(fix(upfinal*sumarea,2));
+    
+      
     });
 //----------------------------------------------
   
@@ -281,13 +291,16 @@ font-size: 16px;
    
   $('.nor,.doto').addClass('active');
     $('.total').text('0');
-    $('.upfinal').text('0');
+    $('.total1').text('');
    
+               $('.pshow').show();
+             $('.showa').hide();
+             $('.showb').hide();
 
 });
 
         //--交換契稅
-/*     　　$("#reason").change(function () {
+    　　$("#reason").change(function () {
 　　　　var rea = $(this).children('option:selected').val();
            if (rea==='0.02'){
              $('.pshow').hide();
@@ -298,7 +311,7 @@ font-size: 16px;
              $('.showa').hide();
              $('.showb').hide();
            }
-     });         */
+     });         
      
   
 });
