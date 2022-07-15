@@ -16,7 +16,7 @@
    
   <style>
 
- body {
+ body,html{
   height: 100%;
   font-family: Microsoft JhengHei;
   font-weight: bold;
@@ -93,6 +93,8 @@ font-size: 16px;
 }
 .footer{
   width: 100%;
+  position: absolute;
+    bottom: 0;
 }
 .footer-copy{
   width: 100%;
@@ -109,6 +111,10 @@ font-size: 16px;
   margin-left: 3%;
 }
 
+    .wrapper{
+    min-height: 100%;
+}
+
 
   </style>
  
@@ -117,6 +123,7 @@ font-size: 16px;
 <body>
 <!-- nav  -->
 <!-- nav  -->
+ <div class=wrapper>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <a class="navbar-brand" href="home.html"><img src="house1.png" alt="abc"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -298,7 +305,8 @@ font-size: 16px;
     <div class="footer-copy">Copyright © Corporation. All rights reserved.</div>
   </div>
 
-
+  </div>
+   
 <script>
         
    $( document ).ready(function() {
